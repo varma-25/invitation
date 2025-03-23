@@ -36,7 +36,7 @@ body {
 .scroll-container {
     width: 100%;
     height: 100vh;
-    overflow-y: auto;
+    overflow-y: auto; /* Enable scrolling */
     padding: 20px 0;
 }
 
@@ -53,37 +53,41 @@ body {
     animation: fadeIn 2s ease-in-out;
 }
 
-/* Title and Main Heading */
+/* Title */
 .title {
     font-size: 36px;
     font-weight: 600;
     color: #D72638; /* Crimson Red */
 }
 
-/* Couple Section Styling */
+/* Couple Section */
 .couple-section {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 50px;
     margin-top: 40px;
+    flex-wrap: wrap; /* Allows items to wrap in small screens */
 }
 
-/* Groom and Bride Images */
+/* Bride & Groom Images */
 .groom img, .bride img {
-    width: 160px;
-    height: 160px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     object-fit: cover;
     border-radius: 50%;
     border: 6px solid #d4af37; /* Gold Border */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Couple Names Styling */
+/* Ensure Names Are Centered */
 .couple-names {
     text-align: center;
+    flex-basis: 100%; /* Ensure full width on small screens */
 }
 
+/* Couple Name Styling */
 .couple-name {
     font-family: 'Great Vibes', cursive;
     font-size: 50px;
@@ -97,7 +101,7 @@ body {
     to { text-shadow: 0 0 15px #7dfb00, 0 0 30px #ff99cc; }
 }
 
-/* Event Date & Time */
+/* Event Date */
 .event-date {
     font-size: 26px;
     font-weight: bold;
@@ -135,6 +139,7 @@ body {
 .qr-codes {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Ensure QR codes wrap on small screens */
     margin: 30px 0;
 }
 
@@ -165,24 +170,7 @@ body {
     }
 }
 
-/* Sequential Fade-in Animation */
-.fade-in-sequence {
-    opacity: 0;
-    animation: fadeInSequence 1s ease-in-out forwards;
-}
-
-.fade-in-sequence:nth-child(1) { animation-delay: 0.5s; }
-.fade-in-sequence:nth-child(2) { animation-delay: 1s; }
-.fade-in-sequence:nth-child(3) { animation-delay: 1.5s; }
-.fade-in-sequence:nth-child(4) { animation-delay: 2s; }
-.fade-in-sequence:nth-child(5) { animation-delay: 2.5s; }
-
-@keyframes fadeInSequence {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Fade-in Effect */
+/* Fade-in Animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -192,116 +180,58 @@ body {
     animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Text Color Customization */
-.name-1 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
+/* Top Images Section */
+.top-images {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Spacing below images */
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
 }
 
-.name-2 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
+/* Individual Image Styling */
+.top-image {
+    width: 120px; /* Adjust size */
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 4px solid #d4af37; /* Gold border */
+    transition: transform 0.3s ease;
 }
 
-.name-3 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
+/* Hover Effect on Images */
+.top-image:hover {
+    transform: scale(1.2);
 }
 
-.name-4 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
+/* Center Image (slightly larger) */
+.top-image.center {
+    width: 150px;
+    height: 150px;
 }
 
-.name-8 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
+/* Responsive Top Image Adjustments */
+@media (max-width: 768px) {
+    .top-image {
+        width: 100px;
+        height: 100px;
+    }
+    .top-image.center {
+        width: 120px;
+        height: 120px;
+    }
 }
 
-.name-9 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
+/* Responsive Couple Section */
+@media (max-width: 768px) {
+    .groom img, .bride img {
+        max-width: 200px; /* Slightly smaller for mobile */
+    }
 
-.name-10 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-11 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-12 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-13 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-14 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-15 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-16 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-17 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-18 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-19 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-20 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-21 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-22 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-23 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-.name-24 {
-    color: #033900; /* Dark Green */
-    font-weight: bold;
-}
-
-
-.name-5, .name-6, .name-7 {
-    color: #ff0011; /* Dark Red */
-    font-weight: bold;
+    .couple-name {
+        font-size: 1.5rem; /* Adjust text size */
+    }
 }
 
 /* Scrollbar Styling */
@@ -316,82 +246,4 @@ body {
 
 .scroll-container::-webkit-scrollbar-track {
     background: #f3dcd8;
-}
-
-
-
-
-/* Top Images Section */
-.top-images {
-    display: flex;
-    justify-content: space-between; /* Space images evenly */
-    align-items: center; /* Vertically center the images */
-    margin-bottom: 20px; /* Add spacing below the images */
-}
-
-/* Individual Image Styling */
-.top-image {
-    width: 120px; /* Adjust size as needed */
-    height: 120px;
-    object-fit: cover; /* Ensure images are cropped properly */
-    border-radius: 50%; /* Circular images */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow */
-    border: 4px solid #d4af37; /* Gold border */
-    transition: transform 0.3s ease;
-}
-
-/* Hover Effect on Images */
-.top-image:hover {
-    transform: scale(1.2); /* Slight zoom on hover */
-}
-
-/* Center Image (slightly larger) */
-.top-image.center {
-    width: 150px;
-    height: 150px;
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    .top-image {
-        width: 100px;
-        height: 100px;
-    }
-    .top-image.center {
-        width: 120px;
-        height: 120px;
-    }
-}
-/* Responsive Couple Section */
-.couple-section {
-    display: flex;
-    flex-wrap: wrap; /* Allow images to wrap on small screens */
-    justify-content: center; /* Center content */
-    align-items: center;
-    gap: 1rem; /* Space between images */
-    text-align: center; /* Ensure text is centered */
-}
-
-.groom img, .bride img {
-    width: 100%; /* Full width for responsiveness */
-    max-width: 300px; /* Prevents the image from being too large */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure no image distortion */
-    border-radius: 10px; /* Optional: Adds rounded corners */
-}
-
-/* Ensure the couple names are centered and scaled */
-.couple-names {
-    flex-basis: 100%; /* Take full width on small screens */
-}
-
-/* Media Query for Small Screens */
-@media (max-width: 768px) {
-    .groom img, .bride img {
-        max-width: 200px; /* Slightly smaller for mobile */
-    }
-
-    .couple-names h1 {
-        font-size: 1.5rem; /* Adjust text size */
-    }
 }
