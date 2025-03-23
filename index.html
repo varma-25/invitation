@@ -1,63 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- Curtain Animation -->
     <div class="curtain left-curtain"></div>
     <div class="curtain right-curtain"></div>
 
-    <!-- Floating Petals -->
+    <!-- Petal Container -->
     <div class="petals"></div>
 
     <!-- Main Invitation Content -->
     <div class="scroll-container">
         <div class="invitation-container">
-            <h2 class="fade-in name-1">• Sreerasthu • Shubhamasthu • Avignamasthu •</h2>
-            <h1 class="title glow-effect name-2">Wedding Invitation</h1>
+
+            <!-- Top Images Section -->
+            <div class="top-images">
+                <img src="image1.jpeg" alt="Left Image" class="top-image left">
+                <img src="image2.jpg" alt="Center Image" class="top-image center">
+                <img src="image3.jpeg" alt="Right Image" class="top-image right">
+            </div>
+
+            <!-- Header Section -->
+            <h1 class="title glow-effect name-2"><u>Wedding Invitation</u></h1>
 
             <p class="fade-in name-3"><strong>Sri Uppalapati Ramakrishnam Raju - Smt. Suneetha</strong></p>
             <p class="fade-in name-4">We solicit your gracious presence with family & friends on the auspicious occasion of the marriage of our younger son</p>
 
-            <h1 class="couple-name name-5">Pavan Kalyan Varma</h1>
-            <h1 class="couple-name name-6">with</h1>
-            <h1 class="couple-name name-7">Pujitha</h1>
+            <!-- Couple Section with Images and Names -->
+            <div class="couple-section fade-in name-5">
 
+                <!-- Groom Image -->
+                <div class="groom">
+                    <img src="pavan.png" alt="Groom">
+                </div>
+
+                <!-- Names in the Center -->
+                <div class="couple-names">
+                    <h1 class="couple-name">Pavan Kalyan Varma</h1>
+                    <h2>with</h2>
+                    <h1 class="couple-name">Pujitha</h1>
+                </div>
+
+                <!-- Bride Image -->
+                <div class="bride">
+                    <img src="pujitha.png" alt="Bride">
+                </div>
+
+            </div>
+
+            <!-- Bride's Family Info -->
             <p class="fade-in name-8">(Only D/o. Sri Bhupathiraju Ramakrishnam Raju & Smt. Sudharani, Muthyalampadu, Vijayawada)</p>
 
+            <!-- Wedding Date and Time -->
             <h2 class="fade-in name-9">Sumuhurtham:</h2>
             <p class="date-time fade-in name-10"><strong>Saturday, 12th April 2025</strong> <br> at <strong>08:05 PM</strong> ("Tula Lagnam")</p>
 
+            <!-- Venue Details -->
             <h2 class="fade-in name-11">Venue:</h2>
             <p class="venue fade-in name-12">Gokaraju Gangaraju Kalyana Mandapam, <br> Muthyalampadu, Vijayawada</p>
             <p class="fade-in name-13">Dinner: <strong>8:30 PM onwards</strong></p>
 
+            <!-- Venue QR Code -->
             <div class="qr-codes fade-in name-14">
-                <img src="qr1.png" alt="Venue QR Code 1">
+                <img src="qr1.png" alt="Venue QR Code">
             </div>
 
+            <!-- Vratham Ceremony -->
             <h2 class="fade-in name-15">Vratham:</h2>
             <p class="date-time fade-in name-16"><strong>Monday, 14th April 2025</strong> <br> at <strong>08:00 AM</strong></p>
             <p class="venue fade-in name-17">At Our Residence, <br> Marturu, Bapatla Dist.</p>
             <p class="fade-in name-18"><strong>Lunch: 12:00 PM onwards</strong></p>
 
+            <!-- Vratham QR Code -->
             <div class="qr-codes fade-in name-19">
-                <img src="qr2.png" alt="Venue QR Code 2">
+                <img src="qr2.png" alt="Vratham QR Code">
             </div>
 
+            <!-- Invited By -->
             <h2 class="fade-in name-20">Invited by:</h2>
             <p class="fade-in name-21"><strong>Sri Uppalapati Ramakrishnam Raju - Smt. Suneetha</strong></p>
             <p class="fade-in name-22"><strong>Sri Uppalapati Akhil Varma - Smt. Sindhura</strong></p>
             <p class="fade-in name-23"><strong>Chi. Irashree</strong></p>
+
+            <!-- Best Wishes -->
             <p class="fade-in best-wishes name-24">With Best Compliments from Near & Dear.</p>
+
         </div>
     </div>
 
     <script src="script.js"></script>
+
+<!-- 🎵 Background Music -->
+<audio id="background-music" loop>
+    <source src="music.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- 🎼 Play Button (Fallback for Autoplay Block) -->
+<button id="play-music-btn" style="display: none;">🎵 Play Music</button>
+
+<!-- 🌸 Petal Container -->
+<div class="petals"></div>
+
+
 </body>
+
 </html>

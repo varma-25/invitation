@@ -1,22 +1,24 @@
+/* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
 
+/* General Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
     background: url('imge1.webp') no-repeat center center fixed;
     background-size: cover;
     text-align: center;
-    color: #5a3d41;
+    color: #5a3d41; /* Warm Brown */
     margin: 0;
     overflow: hidden;
     animation: fadeInPage 2s ease-in-out;
 }
 
-/* Curtain Effect */
+/* Curtain Animation */
 .curtain {
     position: fixed;
     width: 50vw;
     height: 100%;
-    background: linear-gradient(to right, #b23a48, #6d3b4d);
+    background: linear-gradient(to right, #ff001e, #6d3b4d);
     z-index: 10;
     top: 0;
     animation: openCurtain 2s ease-in-out forwards;
@@ -28,29 +30,6 @@ body {
 @keyframes openCurtain {
     0% { width: 50vw; }
     100% { width: 0; visibility: hidden; overflow: hidden; }
-}
-
-/* Floating Petals Effect */
-.petals {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.petal {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background: url('petal.png') no-repeat center;
-    background-size: contain;
-    opacity: 0.8;
-    animation: fall linear infinite;
-}
-
-@keyframes fall {
-    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
 }
 
 /* Scrollable Container */
@@ -65,66 +44,98 @@ body {
 .invitation-container {
     background: rgba(255, 255, 255, 0.9);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    width: 85%;
+    max-width: 900px;
     margin: auto;
     position: relative;
     animation: fadeIn 2s ease-in-out;
 }
 
-/* Floral Frame */
-.floral-frame {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.8;
-}
-
-/* Text Styling */
-h2, .title, .couple-name {
+/* Title and Main Heading */
+.title {
+    font-size: 36px;
     font-weight: 600;
-    color: #8b5e6a;
+    color: #D72638; /* Crimson Red */
 }
 
-h1.title {
-    font-size: 30px;
-    color: #b23a48;
+/* Couple Section Styling */
+.couple-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
 }
 
-h1.couple-name {
+/* Groom and Bride Images */
+.groom img, .bride img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #d4af37; /* Gold Border */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Couple Names Styling */
+.couple-names {
+    text-align: center;
+}
+
+.couple-name {
     font-family: 'Great Vibes', cursive;
-    font-size: 45px;
-    color: #b23a48;
+    font-size: 50px;
+    color: #ff001e; /* Deep Pink */
     animation: glowText 2s ease-in-out infinite alternate;
 }
 
-/* Names Appearing One by One */
-.fade-in-sequence {
-    opacity: 0;
-    animation: fadeInSequence 1s ease-in-out forwards;
+/* Glow Animation */
+@keyframes glowText {
+    from { text-shadow: 0 0 10px #7dfb00, 0 0 20px #ff6699; }
+    to { text-shadow: 0 0 15px #7dfb00, 0 0 30px #ff99cc; }
 }
 
-.fade-in-sequence:nth-child(1) { animation-delay: 0.5s; }
-.fade-in-sequence:nth-child(2) { animation-delay: 1s; }
-.fade-in-sequence:nth-child(3) { animation-delay: 1.5s; }
-.fade-in-sequence:nth-child(4) { animation-delay: 2s; }
-.fade-in-sequence:nth-child(5) { animation-delay: 2.5s; }
-
-@keyframes fadeInSequence {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Event Date & Time */
+.event-date {
+    font-size: 26px;
+    font-weight: bold;
+    color: #004002; /* Green */
 }
 
-/* QR Codes */
+/* Invitation Message */
+.invitation-message {
+    font-size: 22px;
+    color: #FF8C00; /* Dark Orange */
+    font-weight: 500;
+}
+
+/* Venue Information */
+.venue-name {
+    font-size: 26px;
+    font-weight: bold;
+    color: #B22222; /* Firebrick */
+    text-transform: uppercase;
+}
+
+.location {
+    font-size: 20px;
+    color: #5A3D41; /* Warm Brown */
+}
+
+.dinner-time {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FF4500; /* Orange Red */
+    margin-top: 10px;
+}
+
+/* QR Code Section */
 .qr-codes {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .qr-codes img {
@@ -154,6 +165,145 @@ h1.couple-name {
     }
 }
 
+/* Sequential Fade-in Animation */
+.fade-in-sequence {
+    opacity: 0;
+    animation: fadeInSequence 1s ease-in-out forwards;
+}
+
+.fade-in-sequence:nth-child(1) { animation-delay: 0.5s; }
+.fade-in-sequence:nth-child(2) { animation-delay: 1s; }
+.fade-in-sequence:nth-child(3) { animation-delay: 1.5s; }
+.fade-in-sequence:nth-child(4) { animation-delay: 2s; }
+.fade-in-sequence:nth-child(5) { animation-delay: 2.5s; }
+
+@keyframes fadeInSequence {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Text Color Customization */
+.name-1 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-2 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-3 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-4 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-8 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-9 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-10 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-11 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-12 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-13 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-14 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-15 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-16 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-17 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-18 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-19 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-20 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-21 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-22 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-23 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+.name-24 {
+    color: #033900; /* Dark Green */
+    font-weight: bold;
+}
+
+
+.name-5, .name-6, .name-7 {
+    color: #ff0011; /* Dark Red */
+    font-weight: bold;
+}
+
 /* Scrollbar Styling */
 .scroll-container::-webkit-scrollbar {
     width: 8px;
@@ -168,54 +318,47 @@ h1.couple-name {
     background: #f3dcd8;
 }
 
-/* Fade-in effect */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+
+
+
+/* Top Images Section */
+.top-images {
+    display: flex;
+    justify-content: space-between; /* Space images evenly */
+    align-items: center; /* Vertically center the images */
+    margin-bottom: 20px; /* Add spacing below the images */
 }
 
-.fade-in {
-    animation: fadeIn 1.5s ease-in-out;
+/* Individual Image Styling */
+.top-image {
+    width: 120px; /* Adjust size as needed */
+    height: 120px;
+    object-fit: cover; /* Ensure images are cropped properly */
+    border-radius: 50%; /* Circular images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    border: 4px solid #d4af37; /* Gold border */
+    transition: transform 0.3s ease;
 }
 
-/* Glowing text effect */
-@keyframes glowText {
-    from { text-shadow: 0 0 10px #ffffff; }
-    to { text-shadow: 0 0 20px #ffffff; }
+/* Hover Effect on Images */
+.top-image:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
 }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s ease-in-out forwards;
+/* Center Image (slightly larger) */
+.top-image.center {
+    width: 150px;
+    height: 150px;
 }
 
-.name-1 { animation-delay: 1s; }
-.name-2 { animation-delay: 1.5s; }
-.name-3 { animation-delay: 2s; }
-.name-4 { animation-delay: 2.5s; }
-.name-5 { animation-delay: 3s; }
-.name-6 { animation-delay: 3.5s; }
-.name-7 { animation-delay: 4s; }
-.name-8 { animation-delay: 4.5s; }
-.name-9 { animation-delay: 5s; }
-.name-10 { animation-delay: 5.5s; }
-.name-11 { animation-delay: 6s; }
-.name-12 { animation-delay: 6.5s; }
-.name-13 { animation-delay: 7s; }
-.name-14 { animation-delay: 7.5s; }
-.name-15 { animation-delay: 8s; }
-.name-16 { animation-delay: 8.5s; }
-.name-17 { animation-delay: 9s; }
-.name-18 { animation-delay: 9.5s; }
-.name-19 { animation-delay: 10s; }
-.name-20 { animation-delay: 10.5s; }
-.name-21 { animation-delay: 11s; }
-.name-22 { animation-delay: 11.5s; }
-.name-23 { animation-delay: 12s; }
-.name-24 { animation-delay: 12.5s; }
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .top-image {
+        width: 100px;
+        height: 100px;
+    }
+    .top-image.center {
+        width: 120px;
+        height: 120px;
+    }
 }
