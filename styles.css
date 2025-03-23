@@ -362,3 +362,36 @@ body {
         height: 120px;
     }
 }
+/* Responsive Couple Section */
+.couple-section {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap on small screens */
+    justify-content: center; /* Center content */
+    align-items: center;
+    gap: 1rem; /* Space between images */
+    text-align: center; /* Ensure text is centered */
+}
+
+.groom img, .bride img {
+    width: 100%; /* Full width for responsiveness */
+    max-width: 300px; /* Prevents the image from being too large */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure no image distortion */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+/* Ensure the couple names are centered and scaled */
+.couple-names {
+    flex-basis: 100%; /* Take full width on small screens */
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .groom img, .bride img {
+        max-width: 200px; /* Slightly smaller for mobile */
+    }
+
+    .couple-names h1 {
+        font-size: 1.5rem; /* Adjust text size */
+    }
+}
